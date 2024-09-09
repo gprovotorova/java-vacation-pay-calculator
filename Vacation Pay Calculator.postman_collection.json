@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "aa2dc50d-504f-4d31-baaf-985fb66244f3",
+		"name": "Vacation Pay Calculator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27773141"
+	},
+	"item": [
+		{
+			"name": "Получение суммы отпускных (данные: количество дней отпуска)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calculate?averageSalary=50000&vacationDays=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "averageSalary",
+							"value": "50000"
+						},
+						{
+							"key": "vacationDays",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение суммы отпускных (данные: количество дней отпуска, дата начала отпуска)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calculate?averageSalary=50000&vacationDays=10&startVacationDate=01.11.2024",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "averageSalary",
+							"value": "50000"
+						},
+						{
+							"key": "vacationDays",
+							"value": "10"
+						},
+						{
+							"key": "startVacationDate",
+							"value": "01.11.2024"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение суммы отпускных (данные: количество дней отпуска, дата конца отпуска)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calculate?averageSalary=50000&vacationDays=10&endVacationDate=01.11.2024",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "averageSalary",
+							"value": "50000"
+						},
+						{
+							"key": "vacationDays",
+							"value": "10"
+						},
+						{
+							"key": "endVacationDate",
+							"value": "01.11.2024"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение суммы отпускных в период отпуска есть праздничный день(данные: даты начала отпуска и конца отпуска)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calculate?averageSalary=50000&startVacationDate=01.11.2024&endVacationDate=19.11.2024",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "averageSalary",
+							"value": "50000"
+						},
+						{
+							"key": "startVacationDate",
+							"value": "01.11.2024"
+						},
+						{
+							"key": "endVacationDate",
+							"value": "19.11.2024"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение суммы отпускных в период отпуска только выходные дни (данные: количество дней отпуска, дата начала отпуска)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calculate?averageSalary=50000&startVacationDate=10.09.2024&endVacationDate=20.09.2024",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "averageSalary",
+							"value": "50000"
+						},
+						{
+							"key": "vacationDays",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "startVacationDate",
+							"value": "10.09.2024"
+						},
+						{
+							"key": "endVacationDate",
+							"value": "20.09.2024"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение суммы отпускных (данные отсутствуют)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+							"    pm.response.to.have.status(400);",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/calculate"
+			},
+			"response": []
+		},
+		{
+			"name": "Получение суммы отпускных (введены все данные)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calculate?averageSalary=50000& vacationDays=10&startVacationDate=10.09.2024&endVacationDate=23.09.2024",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "averageSalary",
+							"value": "50000"
+						},
+						{
+							"key": " vacationDays",
+							"value": "10"
+						},
+						{
+							"key": "startVacationDate",
+							"value": "10.09.2024"
+						},
+						{
+							"key": "endVacationDate",
+							"value": "23.09.2024"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
