@@ -48,7 +48,7 @@ ____
 
     docker run -p 8080:8080 java-vacation-pay-calculator
 
-7. Работу приложения можно проверить через postman, используя файл [Vacation Pay Calculator.postman_collection.json](vacation_pay_calculator.postman_collection.json)
+7. Работу приложения можно проверить через postman, используя файл [vacation_pay_calculator.postman_collection.json](vacation_pay_calculator.postman_collection.json)
    
    (скачать и установить можно с официального сайта https://www.postman.com/downloads/)
 
